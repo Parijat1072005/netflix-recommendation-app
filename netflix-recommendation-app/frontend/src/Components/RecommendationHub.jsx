@@ -87,7 +87,7 @@ export default function RecommendationHub() {
     setLoading(true);
     setError(null);
     try {
-      const response = await fetch(`http://localhost:5000/api/recommend/${idToSearch.trim()}`);
+      const response = await fetch(`https://your-app-name.onrender.com/api/recommend/${idToSearch.trim()}`);
       if (!response.ok) throw new Error('Failed to compute recommendations for this User profile ID');
 
       const result = await response.json();
