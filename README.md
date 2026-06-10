@@ -173,4 +173,4 @@ Loading a 200MB model file per API request would make the server unusably slow. 
 
 ## License
 
-MIT License. Dataset is subject to the original Netflix Prize Terms of Use.
+Dataset is subject to the original Netflix Prize Terms of Use.
