@@ -57,6 +57,6 @@ app.get('/api/recommend/:userId', (req, res) => {
     });
 });
 
-app.listen(PORT, () => {
+app.listen(PORT, '0.0.0.0', () => {
     console.log(`🚀 Node.js Recommendation Engine active on http://localhost:${PORT}`);
 });
