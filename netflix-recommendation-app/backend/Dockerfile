@@ -9,11 +9,11 @@ RUN apt-get update && apt-get install -y curl build-essential python3-dev
 # Install Node.js 20
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
 
-# 1. Install build tools and a highly stable NumPy version
-RUN pip install --no-cache-dir setuptools wheel cython numpy==1.26.4
+# 1. Install build tools and the NEWEST NumPy 2.0
+RUN pip install --no-cache-dir setuptools wheel cython numpy>=2.0.0
 
-# 2. CRITICAL FIX: Force surprise to compile using the numpy we JUST installed
-RUN pip install --no-cache-dir --no-build-isolation scikit-surprise==1.1.3
+# 2. CRITICAL FIX: Upgrade to Surprise 1.1.4 which supports NumPy 2.0+
+RUN pip install --no-cache-dir --no-build-isolation scikit-surprise==1.1.4
 
 # 3. Install any remaining requirements
 COPY requirements.txt .
