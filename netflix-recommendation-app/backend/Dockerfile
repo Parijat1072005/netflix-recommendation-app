@@ -3,19 +3,19 @@ FROM python:3.10-slim
 
 WORKDIR /app
 
-# Add python3-dev and build tools so C-extensions can compile
-RUN apt-get update && apt-get install -y curl build-essential python3-dev
+# Add curl and build utilities
+RUN apt-get update && apt-get install -y curl build-essential
 
 # Install Node.js 20
 RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && apt-get install -y nodejs
 
-# 1. Install build tools and the NEWEST NumPy 2.0
-RUN pip install --no-cache-dir setuptools wheel cython numpy>=2.0.0
+# 1. Install modern NumPy (2.0+)
+RUN pip install --no-cache-dir numpy>=2.0.0
 
-# 2. CRITICAL FIX: Upgrade to Surprise 1.1.4 which supports NumPy 2.0+
-RUN pip install --no-cache-dir --no-build-isolation scikit-surprise==1.1.4
+# 2. Install the updated scikit-surprise that fully supports NumPy 2 natively
+RUN pip install --no-cache-dir scikit-surprise==1.1.5
 
-# 3. Install any remaining requirements
+# 3. Install any remaining requirements (like pandas)
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
