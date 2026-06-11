@@ -1,3 +1,5 @@
+***Application link:*** https://netflix-recommendation-app.vercel.app/
+
 # 🎬 Netflix Recommendation Engine
 
 > End-to-end recommendation system built on the Netflix Prize Dataset.
