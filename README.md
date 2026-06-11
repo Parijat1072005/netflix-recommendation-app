@@ -36,7 +36,8 @@
 3. Paste Cells 1–8 in order and run all
 4. After Cell 8 completes, download all output files from:
    **Session panel → Output → Download All**
-5. Place the downloaded files into the `backend/` folder
+5. Place the downloaded files into the `backend/` folder in VS code, the folder structure in VS Code is same as netflix-recommendation-app additionally the .env is there in the backend having the VITE_TMDB_API_KEY.
+
 
 ### 2. Start the Backend
 
