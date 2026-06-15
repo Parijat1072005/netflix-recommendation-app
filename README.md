@@ -78,11 +78,8 @@ npm run dev
 
 | Endpoint | Method | Description |
 |---|---|---|
-| `/api/health` | GET | Server status + loaded asset check |
-| `/api/stats` | GET | Dataset and model performance stats |
-| `/api/users?limit=50` | GET | List available user IDs for the UI selector |
+
 | `/api/recommend/:userId` | GET | Top-10 recommendations for a user |
-| `/api/similar/:movieIdx` | GET | Movies similar to a given movie |
 
 **Example request:**
 ```bash
